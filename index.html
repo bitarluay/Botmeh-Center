@@ -12,11 +12,19 @@
     <p>Your one-stop hub for apartments, retail stores, and fuel services.</p>
   </header>
 
-  <main>
-    <section id="listings">
-      <!-- Listings will be inserted here dynamically -->
-    </section>
+  <!-- Filter Buttons -->
+  <nav id="filters">
+    <button onclick="filterProperties('All')">All</button>
+    <button onclick="filterProperties('Apartment')">Apartments</button>
+    <button onclick="filterProperties('Retail Store')">Retail Stores</button>
+    <button onclick="filterProperties('Gas Station')">Gas Station</button>
+  </nav>
 
+  <main>
+    <!-- Listings -->
+    <section id="listings"></section>
+
+    <!-- Contact Form -->
     <section id="contact">
       <h2>Contact Us</h2>
       <form action="https://formspree.io/f/mblpyqgo" method="POST">
@@ -50,6 +58,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
