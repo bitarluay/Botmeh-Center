@@ -30,10 +30,58 @@
       <form action="https://formspree.io/f/mblpyqgo" method="POST">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="_replyto" placeholder="Your Email" required>
-        <input type="text" name="property" placeholder="Property you are interested in" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Send</button>
-      </form>
+        <input type="tel" name="phone" placeholder="Your Phone Number" required>
+
+    <label for="propertyType">Property Type</label>
+    <select id="propertyType" name="propertyType" required>
+      <option value="">Select a category</option>
+      <option value="apartment">Apartment</option>
+      <option value="retail">Retail Store</option>
+      <option value="gas_station">Gas Station</option>
+    </select>
+
+    <div id="propertyNumberContainer" style="display:none;">
+      <label for="propertyNumber">Property Number</label>
+      <select id="propertyNumber" name="propertyNumber">
+        <option value="">Select a number</option>
+      </select>
+    </div>
+
+    <textarea name="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<script>
+  const propertyType = document.getElementById('propertyType');
+  const propertyNumberContainer = document.getElementById('propertyNumberContainer');
+  const propertyNumber = document.getElementById('propertyNumber');
+
+  propertyType.addEventListener('change', function() {
+    const selected = this.value;
+    propertyNumber.innerHTML = '<option value="">Select a number</option>'; // reset options
+
+    if (selected === 'apartment') {
+      propertyNumberContainer.style.display = 'block';
+      for (let i = 1; i <= 4; i++) {
+        const option = document.createElement('option');
+        option.value = 'Apartment ' + i;
+        option.textContent = 'Apartment ' + i;
+        propertyNumber.appendChild(option);
+      }
+    } else if (selected === 'retail') {
+      propertyNumberContainer.style.display = 'block';
+      for (let i = 1; i <= 7; i++) {
+        const option = document.createElement('option');
+        option.value = 'Retail Store ' + i;
+        option.textContent = 'Retail Store ' + i;
+        propertyNumber.appendChild(option);
+      }
+    } else {
+      propertyNumberContainer.style.display = 'none';
+    }
+  });
+</script>
     </section>
 
 <section id="map">
@@ -59,6 +107,7 @@
   <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
