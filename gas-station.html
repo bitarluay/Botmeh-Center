@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gas Station - Botmeh Center</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-header">
+    <div class="container">
+      <a href="index.html" class="back-link">← Back to Home</a>
+      <h1>Gas Station & Services</h1>
+      <p>24/7 fuel and convenience services for the Botmeh community</p>
+    </div>
+  </div>
+
+  <main>
+    <section id="listings"></section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Botmeh Center. All rights reserved.</p>
+  </footer>
+
+  <script>
+    fetch('properties.json')
+      .then(response => response.json())
+      .then(data => {
+        const gasStation = data.filter(p => p.type === 'Gas Station');
+        displayProperties(gasStation);
+      })
+      .catch(err => console.error('Error loading gas station:', err));
+
+    function displayProperties(properties) {
+      const listings = document.getElementById('listings');
+      listings.innerHTML = '';
+      listings.classList.add('listings-grid');
+      
+      if (properties.length === 0) {
+        listings.innerHTML = '<p style="text-align:center; color:#666; font-size:1.2em; padding:3em;">No gas station information found.</p>';
+        return;
+      }
+      
+      properties.forEach(property => {
+        const card = document.createElement('div');
+        card.classList.add('property');
+        
+        const amenitiesTags = property.amenities.map(a => 
+          `<span class="amenity-tag">${a}</span>`
+        ).join('');
+        
+        const badgeClass = property.status === 'Available' ? 'badge-available' : 'badge-occupied';
+        
+        card.innerHTML = `
+          <div class="property-image-container">
+            <span class="property-badge ${badgeClass}">${property.status}</span>
+            <img src="${property.image}" alt="${property.name}" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23e5e7eb%22 width=%22400%22 height=%22300%22/%3E%3Ctext fill=%22%239ca3af%22 font-family=%22sans-serif%22 font-size=%2220%22 dy=%2210.5%22 font-weight=%22bold%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22%3E${property.name}%3C/text%3E%3C/svg%3E'">
+          </div>
+          <div class="details">
+            <h3>${property.name}</h3>
+            <div class="amenities-list">
+              ${amenitiesTags}
+            </div>
+            <a href="index.html#contact">Contact Us</a>
+          </div>
+        `;
+        
+        listings.appendChild(card);
+      });
+    }
+  </script>
+</body>
+</html>
