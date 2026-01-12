@@ -3,112 +3,143 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Botmeh Center</title>
+  <title>Botmeh Center - Your Home in the Heart of Botmeh</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <h1>Botmeh Center</h1>
-    <p>Your one-stop hub for apartments, retail stores, and fuel services.</p>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Botmeh Center</h1>
+      <p class="tagline">Where Mountain Serenity Meets Modern Living</p>
+    </div>
   </header>
 
-  <!-- Filter Buttons -->
-  <nav id="filters">
-    <button onclick="filterProperties('All')">All</button>
-    <button onclick="filterProperties('Apartment')">Apartments</button>
-    <button onclick="filterProperties('Retail Store')">Retail Stores</button>
-    <button onclick="filterProperties('Gas Station')">Gas Station</button>
-  </nav>
+  <!-- About Botmeh Section -->
+  <section class="about-botmeh">
+    <div class="container">
+      <h2>Discover Botmeh</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p class="intro">Nestled in the heart of Lebanon's Chouf region, Botmeh Center stands as a gateway to one of the country's most enchanting mountain villages.</p>
+          
+          <p>Botmeh, meaning "the terebinth tree" in Syriac and Arabic, is a historic locality perched at 950-1200 meters above sea level, just 55 kilometers from Beirut. Located southeast of the renowned Beiteddine Palace, this charming village spans over 200 hectares of pristine mountain landscape.</p>
+          
+          <div class="highlight-box">
+            <h3>A Living Heritage</h3>
+            <p>The village is renowned for its:</p>
+            <ul>
+              <li><strong>Ancient Architecture:</strong> Traditional stone houses that tell stories of generations past</li>
+              <li><strong>Historic Church:</strong> A spiritual landmark visible from our building's balconies</li>
+              <li><strong>Natural Wonders:</strong> The legendary "Oak of Oum Al-Charatit," ancient pine woods, and geological caves</li>
+              <li><strong>Archaeological Treasures:</strong> Phoenician-era remains, ancient sarcophagi, and fascinating animal and plant fossils</li>
+              <li><strong>Traditional Crafts:</strong> Historic grape presses and old springs that sustained the community for centuries</li>
+            </ul>
+          </div>
 
-  <main>
-    <!-- Listings -->
-    <section id="listings"></section>
-
-    <!-- Contact Form -->
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <form action="https://formspree.io/f/mblpyqgo" method="POST">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="_replyto" placeholder="Your Email" required>
-        <input type="tel" name="phone" placeholder="Your Phone Number" required>
-
-    <label for="propertyType">Property Type</label>
-    <select id="propertyType" name="propertyType" required>
-      <option value="">Select a category</option>
-      <option value="apartment">Apartment</option>
-      <option value="retail">Retail Store</option>
-      <option value="gas_station">Gas Station</option>
-    </select>
-
-    <div id="propertyNumberContainer" style="display:none;">
-      <label for="propertyNumber">Property Number</label>
-      <select id="propertyNumber" name="propertyNumber">
-        <option value="">Select a number</option>
-      </select>
+          <p>With nearly 1,500 residents, Botmeh maintains its authentic charm while offering modern conveniences. Our center is strategically located on the main street, placing you at the heart of village life with stunning views of the historic church and surrounding cedar forests from your balcony.</p>
+        </div>
+        <div class="about-image">
+          <img src="images/botmeh-nature.jpg" alt="Botmeh Village and Nature" onerror="this.style.display='none'">
+          <p class="image-caption">Botmeh: Where history meets natural beauty</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <textarea name="message" placeholder="Your Message" required></textarea>
-    <button type="submit">Send</button>
-  </form>
-</section>
+  <!-- Property Categories Section -->
+  <section class="property-categories">
+    <div class="container">
+      <h2>Explore Our Properties</h2>
+      <p class="section-subtitle">Choose your perfect space in Botmeh Center</p>
+      
+      <div class="categories-grid">
+        <div class="category-card" onclick="window.location.href='apartments.html'">
+          <div class="category-icon">🏠</div>
+          <h3>Apartments</h3>
+          <p>Modern living spaces with breathtaking mountain views and traditional charm</p>
+          <a href="apartments.html" class="category-link">Explore Apartments →</a>
+        </div>
 
-<script>
-  const propertyType = document.getElementById('propertyType');
-  const propertyNumberContainer = document.getElementById('propertyNumberContainer');
-  const propertyNumber = document.getElementById('propertyNumber');
+        <div class="category-card" onclick="window.location.href='retail.html'">
+          <div class="category-icon">🏪</div>
+          <h3>Retail Stores</h3>
+          <p>Prime commercial spaces on the main street with high foot traffic</p>
+          <a href="retail.html" class="category-link">View Retail Spaces →</a>
+        </div>
 
-  propertyType.addEventListener('change', function() {
-    const selected = this.value;
-    propertyNumber.innerHTML = '<option value="">Select a number</option>'; // reset options
+        <div class="category-card" onclick="window.location.href='gas-station.html'">
+          <div class="category-icon">⛽</div>
+          <h3>Gas Station</h3>
+          <p>24/7 fuel services and convenience store serving the community</p>
+          <a href="gas-station.html" class="category-link">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    if (selected === 'apartment') {
-      propertyNumberContainer.style.display = 'block';
-      for (let i = 1; i <= 4; i++) {
-        const option = document.createElement('option');
-        option.value = 'Apartment ' + i;
-        option.textContent = 'Apartment ' + i;
-        propertyNumber.appendChild(option);
-      }
-    } else if (selected === 'retail') {
-      propertyNumberContainer.style.display = 'block';
-      for (let i = 1; i <= 7; i++) {
-        const option = document.createElement('option');
-        option.value = 'Retail Store ' + i;
-        option.textContent = 'Retail Store ' + i;
-        propertyNumber.appendChild(option);
-      }
-    } else {
-      propertyNumberContainer.style.display = 'none';
-    }
-  });
-</script>
-    </section>
+  <!-- Contact Form -->
+  <section id="contact">
+    <div class="container">
+      <h2>Get in Touch</h2>
+      <p class="section-subtitle">Interested in our properties? We'd love to hear from you.</p>
+      
+      <form action="https://formspree.io/f/mblpyqgo" method="POST">
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="_replyto" placeholder="Your Email" required>
+        </div>
+        
+        <input type="tel" name="phone" placeholder="Your Phone Number" required>
+        
+        <label for="propertyType">I'm interested in:</label>
+        <select id="propertyType" name="propertyType" required>
+          <option value="">Select a category</option>
+          <option value="apartment">Apartment</option>
+          <option value="retail">Retail Store</option>
+          <option value="gas_station">Gas Station</option>
+        </select>
+        
+        <div id="propertyNumberContainer" style="display:none;">
+          <label for="propertyNumber">Specific Property:</label>
+          <select id="propertyNumber" name="propertyNumber">
+            <option value="">Select a property</option>
+          </select>
+        </div>
+        
+        <label for="message">Message:</label>
+        <textarea name="message" id="message" placeholder="Tell us about your requirements..." required></textarea>
+        
+        <button type="submit">Send Message</button>
+      </form>
+    </div>
+  </section>
 
-<section id="map">
-  <h2>Location</h2>
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4207.328591765129!2d35.618816850683785!3d33.65994839911729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151f209ca7715729%3A0x6db90361e1f1eb1b!2sBitar%20-%20Gas%20Station!5e1!3m2!1sen!2sus!4v1761841812418!5m2!1sen!2sus"
-    width="100%"
-    height="400"
-    style="border:0;"
-    allowfullscreen=""
-    loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade">
-  </iframe>
-</section>
-
-
-  </main>
+  <!-- Map Section -->
+  <section id="map">
+    <div class="container">
+      <h2>Our Location</h2>
+      <p class="section-subtitle">Find us on the main street of Botmeh, Chouf District, Lebanon</p>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4207.328591765129!2d35.618816850683785!3d33.65994839911729!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x151f209ca7715729%3A0x6db90361e1f1eb1b!2sBitar%20-%20Gas%20Station!5e1!3m2!1sen!2sus!4v1761841812418!5m2!1sen!2sus"
+        width="100%"
+        height="450"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
 
   <footer>
-    <p>&copy; 2026 Botmeh Center</p>
+    <p>&copy; 2026 Botmeh Center. All rights reserved.</p>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
 
 
 
