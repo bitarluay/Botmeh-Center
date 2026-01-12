@@ -2,88 +2,85 @@
   {
     "type": "Apartment",
     "name": "Apartment 1",
-    "amenities": ["2 Bedrooms", "1 Bathroom", "Balcony", "AC", "Parking"],
+    "amenities": ["2 Bedrooms", "1 Bathroom", "Balcony", "AC", "Parking", "Mountain Views"],
     "status": "Available",
     "image": "images/apartment1.jpg"
   },
   {
     "type": "Apartment",
     "name": "Apartment 2",
-    "amenities": ["3 Bedrooms", "2 Bathrooms", "Balcony", "AC", "Parking"],
+    "amenities": ["3 Bedrooms", "2 Bathrooms", "Balcony", "AC", "Parking", "Church View"],
     "status": "Occupied",
     "image": "images/apartment2.jpg"
   },
   {
     "type": "Apartment",
     "name": "Apartment 3",
-    "amenities": ["1 Bedroom", "1 Bathroom", "AC", "Parking"],
+    "amenities": ["1 Bedroom", "1 Bathroom", "AC", "Parking", "Compact Living"],
     "status": "Available",
     "image": "images/apartment3.jpg"
   },
   {
     "type": "Apartment",
     "name": "Apartment 4",
-    "amenities": ["2 Bedrooms", "1 Bathroom", "Balcony", "AC"],
+    "amenities": ["2 Bedrooms", "1 Bathroom", "Balcony", "AC", "Village Views"],
     "status": "Occupied",
     "image": "images/apartment4.jpg"
   },
   {
     "type": "Retail Store",
     "name": "Retail 1",
-    "amenities": ["100 m²", "Corner Unit", "High Foot Traffic"],
+    "amenities": ["100 m²", "Corner Unit", "High Foot Traffic", "Main Street"],
     "status": "Available",
     "image": "images/retail1.jpg"
   },
   {
     "type": "Retail Store",
     "name": "Retail 2",
-    "amenities": ["80 m²", "Storage Room"],
+    "amenities": ["80 m²", "Storage Room", "Display Windows"],
     "status": "Occupied",
     "image": "images/retail2.jpg"
   },
   {
     "type": "Retail Store",
     "name": "Retail 3",
-    "amenities": ["120 m²", "Corner Unit"],
+    "amenities": ["120 m²", "Corner Unit", "Premium Location"],
     "status": "Available",
     "image": "images/retail3.jpg"
   },
   {
     "type": "Retail Store",
     "name": "Retail 4",
-    "amenities": ["90 m²", "Near Entrance"],
+    "amenities": ["90 m²", "Near Entrance", "Easy Access"],
     "status": "Occupied",
     "image": "images/retail4.jpg"
   },
   {
     "type": "Retail Store",
     "name": "Retail 5",
-    "amenities": ["70 m²", "High Visibility"],
+    "amenities": ["70 m²", "High Visibility", "Main Street Facing"],
     "status": "Available",
     "image": "images/retail5.jpg"
   },
   {
     "type": "Retail Store",
     "name": "Retail 6",
-    "amenities": ["60 m²", "Corner Unit"],
+    "amenities": ["60 m²", "Corner Unit", "Compact Space"],
     "status": "Occupied",
     "image": "images/retail6.jpg"
   },
   {
     "type": "Retail Store",
     "name": "Retail 7",
-    "amenities": ["100 m²", "Storage Available"],
+    "amenities": ["100 m²", "Storage Available", "Ground Level"],
     "status": "Available",
     "image": "images/retail7.jpg"
   },
   {
     "type": "Gas Station",
     "name": "Main Fuel Hub",
-    "amenities": ["24/7 Service", "Convenience Store", "Parking"],
+    "amenities": ["24/7 Service", "Convenience Store", "Parking", "Multiple Pumps", "ATM Available"],
     "status": "Available",
     "image": "images/gasstation.jpg"
   }
 ]
-
-
-
